@@ -4,16 +4,67 @@ Ein hochentwickeltes, modulares KI-System mit **3D-Gehirn-Visualisierung**, **Mu
 
 ---
 
-## 🚀 Schnellstart
+## 🚀 One-Click Installation
 
-### 1. System starten
+### Automatische Installation (Empfohlen)
+
 ```bash
-cd /workspace
+# Repository klonen
+git clone https://github.com/DEIN_USERNAME/jarvis-neurocore.git
+cd jarvis-neurocore
+
+# One-Click Installer ausführen
+chmod +x install.sh
+./install.sh
+```
+
+**Der Installer erledigt automatisch:**
+- ✅ Prüft Python-Version (3.10+)
+- ✅ Erstellt virtuelle Umgebung
+- ✅ Installiert alle Abhängigkeiten
+- ✅ Erstellt .env Konfigurationsdatei
+- ✅ Richtet Start-Skripte ein
+
+### Manuelle Installation
+
+```bash
+# Virtuelle Umgebung erstellen
+python3 -m venv venv
+source venv/bin/activate  # Linux/Mac
+# oder: venv\Scripts\activate  # Windows
+
+# Abhängigkeiten installieren
+pip install -r requirements.txt
+
+# Konfiguration erstellen
+cp .env.example .env
+# Trage deine API-Keys in .env ein
+```
+
+---
+
+## 🎯 Schnellstart
+
+### Option 1: Mit Start-Skript (nach Installation)
+```bash
+./start_jarvis.sh
+```
+
+### Option 2: Manuell
+```bash
+# 3D-Gehirn im Hintergrund starten
+python3 visuals/brain_dashboard.py &
+
+# Hauptsystem starten
+python3 main.py
+```
+
+### Option 3: Nur Gehirn-Visualisierung
+```bash
 python3 visuals/brain_dashboard.py
 ```
 
-### 2. 3D-Gehirn öffnen
-Öffne in deinem Browser:
+**Öffne dann im Browser:**
 - **Lokal:** http://localhost:5000
 - **Netzwerk:** http://21.0.12.42:5000
 
