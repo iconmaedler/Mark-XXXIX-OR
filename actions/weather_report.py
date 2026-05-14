@@ -4,6 +4,19 @@ import webbrowser
 from urllib.parse import quote_plus
 
 
+TOOL_DECLARATION = {
+    "name": "weather_report",
+    "description": "Gives the weather report to user",
+    "parameters": {
+        "type": "OBJECT",
+        "properties": {
+            "city": {"type": "STRING", "description": "City name"}
+        },
+        "required": ["city"]
+    }
+}
+
+
 def weather_action(
     parameters: dict,
     player=None,
@@ -52,6 +65,11 @@ def weather_action(
             pass  
 
     return msg
+
+
+def weather_report(parameters: dict, player=None, session_memory=None):
+    """Alias for weather_action to match tool loader expectations."""
+    return weather_action(parameters, player, session_memory)
 
 
 def _speak_and_log(message: str, player=None):
